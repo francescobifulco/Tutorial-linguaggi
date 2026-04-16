@@ -15,9 +15,4 @@ public class Persona {
     void cammina() {
         System.out.println(nome + " sta camminando...");
     }
-
-    public String getNome() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
-    }
 }
