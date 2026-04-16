@@ -1,0 +1,3 @@
+Ciao sono Franci
+Sto imparando a gestire i file in Java.
+Questo file è stato creato automaticamente.
