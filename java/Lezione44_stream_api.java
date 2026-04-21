@@ -1,15 +1,15 @@
-import java.nio.file.Files;
-import java.nio.file.Paths;
+//import java.nio.file.Files;
+//import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.regex.Pattern;
-import java.util.stream.DoubleStream;
+//import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
-import java.io.IOException;
+//import java.io.IOException;
 
 public class Lezione44_stream_api {
     public static void main(String[] args) {
@@ -18,6 +18,7 @@ public class Lezione44_stream_api {
         // Diversi modi per creare uno Stream
         String[] nomi = new String[] { "Marco", "Luca", "Antonio" };
         Stream<String> nomiStream = Arrays.stream(nomi);
+        System.out.println(nomiStream);
 
         Collection<String> nomCollection = Arrays.asList(nomi);
         nomiStream = nomCollection.stream();
@@ -36,6 +37,7 @@ public class Lezione44_stream_api {
         IntStream intStream = IntStream.range(1, 5);
         LongStream longStream = LongStream.range(1, 5);
         System.out.println("Range Int: " + intStream.count());
+        System.out.println(longStream);
 
         // Regex e Stringhe
         String string = "Marco/Antonio/Luca";
