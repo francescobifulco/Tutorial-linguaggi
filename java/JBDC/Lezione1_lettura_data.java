@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -9,21 +10,21 @@ public class Lezione1_lettura_data {
         final String DB_URL = "jdbc:mysql://localhost:3306/prova_db";
         final String USER = "root";
         final String PASS = "root";
-        final String QUERY = "SELECT id, first, last, age FROM Employees";
+        final String QUERY = "SELECT id, nome, cognome, eta FROM utenti";
 
         // Usiamo il try-with-resources per chiudere automaticamente la connessione
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement stmt = conn.createStatement(); 
-            ResultSet rs = stmt.executeQuery(QUERY)){
-            
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(QUERY)) {
+
             System.out.println("Connessione riuscita!");
 
             // Iteriamo sui risultati
             while (rs.next()) {
                 System.out.print("ID: " + rs.getInt("id"));
-                System.out.print(", Age: " + rs.getInt("age"));
-                System.out.print(", First: " + rs.getString("first"));
-                System.out.println(", Last: " + rs.getString("last"));
+                System.out.print(", Età: " + rs.getInt("eta"));
+                System.out.print(", Nome: " + rs.getString("nome"));
+                System.out.println(", Cognome: " + rs.getString("cognome"));
             }
 
         } catch (Exception e) {
