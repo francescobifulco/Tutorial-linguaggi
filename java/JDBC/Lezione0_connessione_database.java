@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Lezione1_lettura_dati {
+public class Lezione0_connessione_database {
     public static void main(String[] args) {
         // Parametri di configurazione
         final String DB_URL = "jdbc:mysql://localhost:3306/prova_db";
