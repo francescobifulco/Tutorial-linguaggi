@@ -1,9 +1,9 @@
-public class Auoto {
-    String marca;
-    String modello;
-    int velocita;
+public class Auto {
+    private String marca;
+    private String modello;
+    private int velocita;
 
-    public Auoto(String marca, String modello, int velocita){
+    public Auto(String marca, String modello, int velocita) {
         this.marca = marca;
         this.modello = modello;
         this.velocita = velocita;
@@ -33,11 +33,13 @@ public class Auoto {
         this.velocita = velocita;
     }
 
-    public void accelera(){
-        System.out.println("L' auto sta correntendo ha una velocita a: " + getVelocita());
+    public void accelera(int incremento) {
+        this.velocita += incremento;
+        System.out.println(marca + " " + modello + " accelera. Nuova velocità: " + velocita + " km/h");
     }
 
-    public void frena(){
-        System.out.println("L' auto sta frendo");
+    public void frena() {
+        this.velocita = 0;
+        System.out.println(marca + " " + modello + " ha frenato. Velocità: " + velocita + " km/h");
     }
 }
