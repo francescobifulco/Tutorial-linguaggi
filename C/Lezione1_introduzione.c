@@ -1,6 +1,7 @@
 #include <stdio.h> // Libreria standard per l'input/output (serve per usare printf)
 #include <stdlib.h> // Libreria standard che include funzioni di utilità (serve per usare system)
 
+//Lezione 1: introduzione al linguaggio c
 int main(){
 
     // printf stampa a schermo la stringa di testo. 

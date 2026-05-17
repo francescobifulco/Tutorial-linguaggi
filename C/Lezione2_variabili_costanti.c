@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Lezione 2: variabili e costanti
 int main(){
     // 1. Intero (int) -> Si stampa con %d
     int primaVariabile = 10;
