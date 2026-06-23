@@ -4,7 +4,7 @@ public class Lezione1_commenti_stampe {
 
     // Questo è il metodo "main". È il punto di partenza di ogni programma Java.
     // Senza questo metodo, il computer non saprebbe da dove iniziare l'esecuzione.
-    public static void main(String[] args) {
+    public static void main(String[] args){
         
         // COMMENTO SINGOLO: Inizia con // e serve per brevi note su una riga.
         // questo e un commento

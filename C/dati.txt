@@ -1,0 +1,5 @@
+101 Smartphone Elettronica Alta 699.99
+102 Monitor Elettronica Media 149.50
+201 Scrivania Arredamento Alta 180.00
+202 Sedia Ufficio Media 85.00
+301 Taccuino Cancelleria Economica 4.50

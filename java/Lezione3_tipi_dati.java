@@ -42,5 +42,15 @@ public class Lezione3_tipi_dati {
         // METODO toUpperCase(): Essendo String un oggetto, ha delle funzioni integrate.
         // Questa trasforma tutto il testo in MAIUSCOLO.
         System.out.println("Testo in maiuscolo: " + laStringa.toUpperCase());
+
+        // Il metodo del casting
+        int num1 = 34;
+        double num2 = 40;
+        double risulto;
+
+        risulto = (int) (num1 / num2);
+        System.out.println(risulto);
+
+
     }
 }
