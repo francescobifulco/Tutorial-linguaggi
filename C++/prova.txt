@@ -1,0 +1,1 @@
+Tabula Rasa! ios::trunc ha cancellato tutto il vecchio testo.
