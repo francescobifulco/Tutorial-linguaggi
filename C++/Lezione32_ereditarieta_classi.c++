@@ -90,6 +90,4 @@ int main() {
     // prof1.saluta();  --> ERRORE! 'saluta' è privato dentro Insegnante.
     // cout << prof1.nome; --> ERRORE! 'nome' è privato dentro Insegnante.
     return 0;
-
-
 }
