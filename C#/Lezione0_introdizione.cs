@@ -1,8 +1,11 @@
 using System;
 
-namespace Lezione0_introdizione{
-    class Program{
-        static void Main(string[] args){
+namespace Lezione0
+{
+    class Lezione0_introdizione
+    {
+        static void Main(string[] args)
+        {
             Console.WriteLine("Ciao mondo prova 1");
         }
     }
