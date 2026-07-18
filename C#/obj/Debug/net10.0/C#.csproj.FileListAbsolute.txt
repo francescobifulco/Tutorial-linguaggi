@@ -1,0 +1,5 @@
+c:\Users\Roman\OneDrive\Documenti\personale\Tutorial linguaggi\C#\obj\Debug\net10.0\C#.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Roman\OneDrive\Documenti\personale\Tutorial linguaggi\C#\obj\Debug\net10.0\C#.AssemblyInfoInputs.cache
+c:\Users\Roman\OneDrive\Documenti\personale\Tutorial linguaggi\C#\obj\Debug\net10.0\C#.AssemblyInfo.cs
+c:\Users\Roman\OneDrive\Documenti\personale\Tutorial linguaggi\C#\obj\Debug\net10.0\C#.csproj.CoreCompileInputs.cache
+c:\Users\Roman\OneDrive\Documenti\personale\Tutorial linguaggi\C#\obj\Debug\net10.0\C#.sourcelink.json
