@@ -1,17 +1,25 @@
 using System;
+using Lezione29Class;
 
-namespace Lezione29{
-    public class Lezione29_gatter_setter{
-        static void Main(string[] args){
+namespace Lezione29 {
+    public class Lezione29_gatter_setter {
+        static void Main(string[] args) {
             
-            // Ora il compilatore troverà Persona1 senza problemi!
             Persona1 pers = new Persona1();
             
-            // Usiamo il SETTER (passa attraverso la proprietà 'Nome')
-            pers.Nome = "Marco";
+            // Usiamo i METODI classici (richiedono le parentesi tonde)
+            pers.SetNome("Marco"); 
+            Console.WriteLine($"Nome preso dal metodo: {pers.GetNome()}");
+
+            // Usiamo la PROPRIETÀ nativa di C# (si usa come una normale variabile!)
+            pers.Nome = "Anna"; // Chiama il 'set' di Nome
+            Console.WriteLine($"Nome preso dalla Property: {pers.Nome}"); // Chiama il 'get' di Nome
             
-            // Usiamo il GETTER
-            Console.WriteLine($"Il nome impostato è: {pers.Nome}");
+            // Test del controllo sull'età che hai programmato
+            Console.WriteLine("\n--- Test controllo età ---");
+            pers.SetEta(-5); // Stamperà l'errore a schermo!
+            
+            Console.ReadLine();
         }
     }
 }
