@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lezione28{
+namespace Lezione28Class{
     public class Persona{
         public string nome;
         public string cognome;
