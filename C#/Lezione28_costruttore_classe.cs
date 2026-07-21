@@ -1,5 +1,5 @@
 using System;
-using Lezione28Class;
+using PersonaPencipale;
 
 namespace Lezione28{
     public class Lezione28_costruttore_classe{
