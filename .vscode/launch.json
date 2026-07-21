@@ -5,16 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: <project-name> Debug",
+            "name": "C#: Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
+            "projectPath": "${workspaceFolder}/Tutorial linguaggi.csproj",
+            "console": "integratedTerminal",
+            "logging": {
+                "moduleLoad": false,
+                "programOutput": true
+            }
         },
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
         }
-
     ]
 }
