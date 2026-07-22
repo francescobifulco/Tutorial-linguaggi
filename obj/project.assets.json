@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\tempRun\\tempRun.csproj",
-      "projectName": "tempRun",
-      "projectPath": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\tempRun\\tempRun.csproj",
+      "projectUniqueName": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\Tutorial linguaggi.csproj",
+      "projectName": "Tutorial linguaggi",
+      "projectPath": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\Tutorial linguaggi.csproj",
       "packagesPath": "C:\\Users\\Roman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\tempRun\\obj\\",
+      "outputPath": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

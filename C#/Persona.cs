@@ -40,8 +40,8 @@ namespace PersonaPencipale{
             this.cognome = "";
             this.eta = 0;
         }
-
-        public void saluta() {
+        // virtual = "Gli studenti e gli insegnanti possono personalizzare questo saluto"
+        public virtual void saluta() {
             Console.WriteLine($"Ciao sono {nome}");
         }
 
