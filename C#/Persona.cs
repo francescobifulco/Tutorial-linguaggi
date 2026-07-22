@@ -41,7 +41,7 @@ namespace PersonaPencipale{
             this.eta = 0;
         }
 
-        public void saluta() {
+        public virtual void saluta() {
             Console.WriteLine($"Ciao sono {nome}");
         }
 

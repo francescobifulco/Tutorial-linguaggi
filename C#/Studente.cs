@@ -14,5 +14,9 @@ namespace PersonaPencipale {
         public void studia() {
             Console.WriteLine($"{nome} sta studiando per i compiti della classe {classe}...");
         }
+        public override void saluta(){
+            base.saluta();
+            Console.WriteLine("Buongiorno prof");
+        }
     }
 }

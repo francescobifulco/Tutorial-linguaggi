@@ -14,5 +14,9 @@ namespace PersonaPencipale {
         public void insegna() {
             Console.WriteLine($"Il docente {cognome} sta spiegando una lezione di {materia}.");
         }
+        public override void saluta(){
+            base.saluta();
+            Console.WriteLine("Buongiorno ragazzi");
+        }
     }
 }
