@@ -14,7 +14,8 @@ namespace PersonaPencipale {
         public void insegna() {
             Console.WriteLine($"Il docente {cognome} sta spiegando una lezione di {materia}.");
         }
-        public override void saluta(){
+        // sealed override = "Personalizzo saluta(), ma blocco chiunque erediti da me"
+        public sealed override void saluta(){
             base.saluta();
             Console.WriteLine("Buongiorno ragazzi");
         }
