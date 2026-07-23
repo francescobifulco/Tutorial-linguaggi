@@ -45,7 +45,7 @@ namespace PersonaPencipale{
             Console.WriteLine($"Ciao sono {nome}");
         }
 
-        public void saluta1() {
+        public virtual void saluta1() {
             Console.WriteLine($"Ciao sono {this.nome}");
         }
     }
