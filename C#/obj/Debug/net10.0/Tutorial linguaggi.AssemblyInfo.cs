@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tutorial linguaggi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d7e9705386cf0a50afbbcb0d6657e96f6e43457")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6241c44c01fea5499b39dacfe0a15ee1c8ac5fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tutorial linguaggi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tutorial linguaggi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

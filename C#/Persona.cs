@@ -41,12 +41,27 @@ namespace PersonaPencipale{
             this.eta = 0;
         }
         // virtual = "Gli studenti e gli insegnanti possono personalizzare questo saluto"
+        // Ovunque, sia dentro che fuori dalla classe e dal namespace/progetto.
         public virtual void saluta() {
             Console.WriteLine($"Ciao sono {nome}");
+            this.cucina();
         }
 
-        public void saluta1() {
+        public virtual void saluta1() {
             Console.WriteLine($"Ciao sono {this.nome}");
+        }
+        // Solo all'interno della stessa classe. Non è visibile nemmeno dalle classi figlie
+        private void cucina(){
+            Console.WriteLine("Sto cucinando");
+        }
+        // Dentro la classe stessa E nelle sue classi figlie (ereditarietà). Non accessibile dal Main direttamente.
+        protected void respira(){
+            Console.WriteLine("Sto respirando");
+        }
+        // Ovunque all'interno dello stesso progetto/assembly, ma non da altri progetti esterni.
+        internal void balla(){
+            Console.WriteLine("Sto ballando");
+            this.respira();
         }
     }
 }

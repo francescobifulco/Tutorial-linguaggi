@@ -19,5 +19,8 @@ namespace PersonaPencipale {
             base.saluta();
             Console.WriteLine("Buongiorno ragazzi");
         }
+        public override void saluta1(){
+            Console.WriteLine($"buongirno ragazzi sono {nome}");
+        }
     }
 }
