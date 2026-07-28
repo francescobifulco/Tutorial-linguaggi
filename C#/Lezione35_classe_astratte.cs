@@ -7,10 +7,10 @@ namespace Lezione35 {
         static void Main(string[] args) {
             
             // Creazione delle istanze di InsegnanteAstratto
-            InsegnanteAstratto insegnante1 = new InsegnanteAstratto("Maria", "Esposito", "Storia");
+            InsegnanteAstratto insegnante1 = new InsegnanteAstratto("Maria", "Esposito", 40, "Storia");
             insegnante1.eta = 40; // Assegnazione della proprietà 'eta' (override della proprietà astratta)
 
-            InsegnanteAstratto insegnante2 = new InsegnanteAstratto("Elisa", "Verdi", "Matematica");
+            InsegnanteAstratto insegnante2 = new InsegnanteAstratto("Elisa", "Verdi", 33, "Matematica");
             insegnante2.eta = 34;
 
             // Chiamata al metodo astratto implementato
