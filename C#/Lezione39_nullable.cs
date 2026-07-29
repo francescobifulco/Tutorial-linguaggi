@@ -27,6 +27,17 @@ namespace Lezione39 {
 
             int? prova44 = prova;
             int prova5 = prova ?? 5;
+
+            int? numero = null;
+            // Se 'numero' è null, gli assegna 10. Se ha già un valore, non fa nulla.
+            numero ??= 10; 
+            Console.WriteLine(numero); 
+
+            string? testo = null;
+            // Senza '?.', testo.Length lancerebbe un errore e farebbe piantare il programma!
+            // Con '?.', ottieni semplicemente 'null' (o un int? nullo)
+            int? lunghezza = testo?.Length; 
+            Console.WriteLine(lunghezza); // Non stampa nulla (e non va in crash)
             
         }
     }
