@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\Tutorial linguaggi.csproj": {}
+    "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\Tutorial linguaggi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\Tutorial linguaggi.csproj": {
+    "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\Tutorial linguaggi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\Tutorial linguaggi.csproj",
+        "projectUniqueName": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\Tutorial linguaggi.csproj",
         "projectName": "Tutorial linguaggi",
-        "projectPath": "c:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\Tutorial linguaggi.csproj",
+        "projectPath": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\Tutorial linguaggi.csproj",
         "packagesPath": "C:\\Users\\Roman\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\obj\\",
+        "outputPath": "C:\\Users\\Roman\\OneDrive\\Documenti\\personale\\Tutorial linguaggi\\C#\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
