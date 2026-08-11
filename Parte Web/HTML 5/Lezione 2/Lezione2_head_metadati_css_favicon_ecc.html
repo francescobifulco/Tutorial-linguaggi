@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!-- Imposta la codifica dei caratteri su UTF-8 (supporta lettere accentate e caratteri speciali) -->
+    <meta charset="UTF-8">
+
+    <!-- Configura il layout su dispositivi mobili (viewport reattivo) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Metadato di tipo 'author': indica l'autore o il creatore del documento -->
+    <meta name="author" content="Chris Mills" />
+
+    <!-- Metadato di tipo 'description': breve descrizione della pagina visibile nei risultati dei motori di ricerca (SEO) -->
+    <meta name="description" content="La sezione di apprendimento di MDN Web Docs ha lo scopo di fornire ai principianti tutto ciò di cui hanno bisogno per iniziare con lo sviluppo web." />
+
+    <!-- Protocollo Open Graph (og:image): definisce l'immagine di anteprima usata quando la pagina viene condivisa sui social (es. Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:image" content="https://developer.mozilla.org/mdn-social-share.png" />
+
+    <!-- Protocollo Open Graph (og:description): descrive il contenuto per le anteprime dei social network -->
+    <meta property="og:description" content="La Mozilla Developer Network (MDN) fornisce informazioni sulle tecnologie Web aperte tra cui HTML, CSS e API." />
+
+    <!-- Protocollo Open Graph (og:title): definisce il titolo visualizzato nell'anteprima social -->
+    <meta property="og:title" content="Mozilla Developer Network" />
+
+    <!-- Collega la 'favicon', ovvero l'icona mostrata sulla scheda del browser -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Titolo principale della scheda del browser (corretto "Cose c' è" in "Cosa c'è") -->
+    <title>Cosa c'è nella head? Metadata in HTML</title>
+
+    <!-- Collega un foglio di stile esterno (CSS) per definire l'aspetto visivo della pagina -->
+    <link rel="stylesheet" href="my-css-file.css">
+
+    <!-- Carica un file JavaScript esterno nella head (blocca il rendering finché non è caricato, a meno di usare attributi come 'defer' o 'async') -->
+    <script src="my-js-file.js"></script>
+
+    <!-- Blocco CSS interno: permette di scrivere regole di stile direttamente nel documento HTML -->
+    <style>
+        .class {
+            /* Regole CSS per la classe selezionata */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Intestazione principale visibile agli utenti all'interno della pagina -->
+    <h1>Titolo contenuto pagina</h1>
+
+    <!-- 
+      Inclusione del file JavaScript esterno posizionato a fine body.
+      Posizionare gli script qui permette alla pagina di caricare prima tutto l'HTML e i CSS, migliorando le prestazioni percepite.
+    -->
+    <script src="my-js-file.js"></script>
+
+    <!-- Blocco JavaScript interno (in-page) per eseguire codice script diretto -->
+    <script>
+        // Dichiarazione di una variabile chiamata 'ciao' con valore numerico 5
+        var ciao = 5;
+
+        // Stampa il valore della variabile nella console degli strumenti di sviluppo del browser
+        console.log(ciao);
+    </script>
+</body>
+
+</html>
