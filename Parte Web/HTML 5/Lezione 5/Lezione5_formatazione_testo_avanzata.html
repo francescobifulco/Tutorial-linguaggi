@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 5: Formattazione di testo avanzata</title>
+</head>
+
+<body>
+    <!-- LISTE DESCRITTIVE (Description Lists) -->
+    <h3>Liste descrittive</h3>
+
+    <!-- 'dl' (Description List) racchiude coppie di termini e relative descrizioni/definizioni -->
+    <dl>
+        <!-- 'dt' (Description Term) specifica il termine da definire -->
+        <dt>soliloquy</dt>
+        <!-- 'dd' (Description Details) contiene la spiegazione o definizione del termine soprastante -->
+        <dd>Discorso pronunciato da un personaggio che parla tra sé e sé, da solo sulla scena.</dd>
+
+        <dt>monologue</dt>
+        <dd>Lungo discorso pronunciato da un solo personaggio rivolto agli altri attori o al pubblico.</dd>
+
+        <dt>aside</dt>
+        <dd>Battuta o commento rivolto direttamente al pubblico che gli altri personaggi in scena finto di non sentire.
+        </dd>
+    </dl>
+
+
+    <!-- CITAZIONI E RIFERIMENTI (Quotations & Citations) -->
+    <h3>Blockquote, inline quotation, citations</h3>
+
+    <!-- 'blockquote' serve per citazioni estese a blocco. L'attributo 'cite' indica l'URL della fonte originale -->
+    <blockquote cite="https://example.com/fonte-citazione">
+        <p>Questo è un intero paragrafo di citazione formattato come blocco autonomo.</p>
+    </blockquote>
+
+    <!-- 'q' crea una citazione breve in linea (il browser aggiunge automaticamente le virgolette) -->
+    <p>
+        Questo è un paragrafo con una citazione in linea:
+        <q cite="https://example.com/fonte">
+            La conoscenza è potere.
+        </q>
+        <!-- 'cite' definisce il titolo o l'autore di un'opera citata -->
+        <cite>— Francesco Bacone</cite>
+    </p>
+
+
+    <!-- ABBREVIAZIONI ED ACRONIMI -->
+    <h3>Abbreviazioni</h3>
+    <!-- 'abbr' specifica un'abbreviazione. L'attributo 'title' mostra il significato esteso al passaggio del mouse -->
+    <abbr title="Hypertext Markup Language">HTML</abbr>
+
+
+    <!-- INFORMAZIONI DI CONTATTO (Address) -->
+    <h3>Informazioni di contatto</h3>
+    <!-- 'address' indica le informazioni di contatto per l'autore dell'articolo o del proprietario del documento -->
+    <address>
+        <p>
+            Chris Mills<br> <!-- 'br' forza una riga a capo senza interrompere il paragrafo -->
+            Manchester<br>
+            The Grim North<br>
+            UK
+        </p>
+
+        <ul>
+            <li>Tel: <a href="tel:01234567890">01234 567 890</a></li>
+            <li>Email: <a href="mailto:me@grim-north.co.uk">me@grim-north.co.uk</a></li>
+        </ul>
+    </address>
+
+
+    <!-- APICI E INDICI (Superscript & Subscript) -->
+    <h3>Superscript e subscript</h3>
+
+    <!-- 'sup' (Superscript) crea testo in apice (es. potenze matematiche o note a piè di pagina) -->
+    x<sup>2</sup><br>
+
+    <!-- 'sub' (Subscript) crea testo in pedice (es. formule chimiche). Corretto '02' con 'O2' (ossigeno nella formula della Caffeina: C8H10N4O2) -->
+    C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>
+
+
+    <!-- RAPPRESENTAZIONE DI CODICE E INPUT TECNICO -->
+    <h3>Rappresentare del codice</h3> <!-- Corretto il titolo da "Reppresentare" a "Rappresentare" -->
+
+    <!-- L'accoppiata <pre><code> conserva la formattazione con spazi e a capo per blocchi di codice multilinea -->
+    <!-- Corretti i refusi del JS: 'fuction' -> 'function', 'alter' -> 'alert' -->
+    <pre><code>var para = document.querySelector('p');
+para.onclick = function(){
+    alert('ciao');
+}</code></pre>
+
+    <!-- 'code' usato da solo indica brevi frammenti di codice all'interno di un flusso in linea -->
+    <p>Usa il comando <code>document.querySelector('p')</code> per selezionare un elemento.</p>
+
+    <!-- 'var' indica il nome di una variabile in ambito matematico o di programmazione -->
+    <p>Usate sempre la variabile <var>pippo</var> quando fate degli esempi.</p>
+
+    <!-- 'kbd' (Keyboard Input) rappresenta un input da tastiera, un tasto fisico o un comando dell'utente -->
+    <p>Premete sulla tastiera <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+    <!-- 'samp' (Sample Output) mostra l'output o i messaggi restituiti da un programma o da un terminale -->
+    <pre><samp>PING mozilla.org (63.245.215.20): 50 data bytes
+65 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+
+    <!-- TEMPO E DATE (Time Element) -->
+    <h3>Tempo e Data</h3>
+    <!-- 'time' rende le date intellegibili alle macchine (spider, motori di ricerca e screen reader) tramite 'datetime' -->
+    <!-- Corretta la discrepanza tra l'attributo (2012) e il testo mostrato (2021) -->
+    <time datetime="2021-01-03">03 Gennaio 2021</time>
+</body>
+
+</html>
