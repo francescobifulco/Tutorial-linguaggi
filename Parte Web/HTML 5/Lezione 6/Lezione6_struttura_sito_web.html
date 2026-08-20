@@ -3,53 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struttura di un sito</title>
+    <title>Lezione 6: Struttura di un sito</title>
 </head>
 <body>
     
+    <!-- HEADER: Intestazione principale del sito. Contiene solitamente il logo, il titolo del sito e banner di apertura -->
     <header>
-        <h1>Header</h1>
+        <h1>Titolo del Sito Web</h1>
     </header>
 
+    <!-- NAV: Sezione dedicata ai link di navigazione principali (Menu di navigazione) -->
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Our team</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Il nostro team</a></li>
+            <li><a href="#">Progetti</a></li>
+            <li><a href="#">Contatti</a></li>
         </ul>
     </nav>
 
+    <!-- MAIN: Contiene il contenuto primario e unico della pagina (può essercene solo uno per pagina) -->
     <main>
+
+        <!-- ARTICLE: Identifica un contenuto autonomo e riutilizzabile (es. un articolo di blog, una notizia o un post) -->
         <article>
-            <h2>Article heading</h2>
+            <h2>Titolo dell'articolo</h2>
+            <!-- Rimossa l'interruzione di riga forzata <br> per una migliore gestione del testo tramite CSS -->
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, quisquam quod excepturi eaque error dolore doloremque, similique esse quidem odit ab accusantium quo magni at recusandae consequatur maiores reiciendis quaerat?</p>
 
-            <h3>Subsection</h3>
+            <h3>Sottosezione 1</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nobis laborum natus eaque beatae expedita ducimus vel, perferendis quam tempora facere a magnam magni dicta qui temporibus sit. Ducimus, repudiandae?</p>
+            
+            <!-- HR: Separatore tematico. Spostato all'esterno del paragrafo <p> per correttezza sintattica -->
+            <hr>
+
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint qui consectetur, illo vero incidunt excepturi doloribus tenetur aliquam, recusandae nemo vel nam odio magni cupiditate inventore velit aut quia sapiente.</p>
 
-            <h3>Another subsection</h3>
+            <h3>Sottosezione 2</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias atque natus voluptate! Sequi rem aspernatur, ducimus voluptatum sit minima sunt perferendis delectus saepe id dolor veniam ut impedit hic architecto.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nulla beatae perspiciatis, debitis iure eius! Officia praesentium cumque fuga ratione nostrum voluptates corporis soluta minus fugit, numquam omnis consequatur distinctio.</p>
-
         </article>
 
+        <!-- ASIDE: Sezione laterale o secondaria rispetto al contenuto principale (sidebar, link correlati, pubblicità) -->
         <aside>
-            <h2>Related</h2>
+            <h2>Contenuti Correlati</h2>
             <ul>
-                <li><a href="#">Oh I do like to be beside the seaside</a></li>
-                <li><a href="#">Oh I do like to be beside the sea</a></li>
-                <li><a href="#">Although in the North of England</a></li>
-                <li><a href="#">It never stops raining</a></li>
-                <li><a href="#">Oh well...</a></li>
+                <li><a href="#">Guida alla struttura HTML</a></li>
+                <li><a href="#">Esempi di layout CSS</a></li>
+                <li><a href="#">Accessibilità Web</a></li>
+                <li><a href="#">Ottimizzazione SEO</a></li>
+                <li><a href="#">Approfondimenti</a></li>
             </ul>
         </aside>
 
     </main>
 
+    <!-- FOOTER: Piè di pagina contenente copyright, note legali, dati societari e link secondari -->
     <footer>
-        <p>Copyright 2050 by nobody. All rights reversed.</p>
+        <p>&copy; 2026 Nome Azienda. Tutti i diritti riservati.</p>
     </footer>
 </body>
 </html>
