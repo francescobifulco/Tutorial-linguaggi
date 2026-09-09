@@ -13,7 +13,6 @@ class Grid
     int grid[20][10];   // Matrice bidimensionale di 20 righe per 10 colonne (rappresenta il campo)
 
     private:
-    std::vector<Color> GetCellColors(); // Metodo privato che restituisce la lista dei colori
     
     int numRows;        // Numero totale di righe (20)
     int numCols;        // Numero totale di colonne (10)

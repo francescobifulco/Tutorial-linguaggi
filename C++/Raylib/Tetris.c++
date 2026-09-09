@@ -1,5 +1,6 @@
 #include <raylib.h> // Include la libreria grafica Raylib per gestire finestra e disegno
 #include "grid.h" // Include la definizione della classe Grid
+#include "blocks.c++"
 
 int main(){
     // 1. Inizializza la finestra di gioco (Larghezza: 300px, Altezza: 600px, Titolo)
@@ -14,9 +15,7 @@ int main(){
     // Crea un'istanza (oggetto) della classe Grid chiamata 'grid'
     Grid grid = Grid();
 
-    grid.grid[0][0] = 1;
-    grid.grid[3][5] = 4;
-    grid.grid[17][8] = 7;
+    LBlock block = LBlock();
 
     // Stampa la matrice iniziale nella console per controllo (debug)
     grid.Print();
@@ -32,6 +31,8 @@ int main(){
         
         // Disegna la griglia di gioco sullo schermo
         grid.Draw();
+
+        block.Draw();
         
         // Conclude la fase di rendering e mostra il fotogramma a schermo
         EndDrawing();
