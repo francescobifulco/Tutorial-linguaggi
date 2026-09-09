@@ -14,6 +14,10 @@ int main(){
     // Crea un'istanza (oggetto) della classe Grid chiamata 'grid'
     Grid grid = Grid();
 
+    grid.grid[0][0] = 1;
+    grid.grid[3][5] = 4;
+    grid.grid[17][8] = 7;
+
     // Stampa la matrice iniziale nella console per controllo (debug)
     grid.Print();
 
