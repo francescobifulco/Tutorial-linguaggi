@@ -1,4 +1,5 @@
 {
     "commentTranslate.hover.enabled": true,
-    "commentTranslate.targetLanguage": "it"
+    "commentTranslate.targetLanguage": "it",
+    "C_Cpp.errorSquiggles": "disabled"
 }
