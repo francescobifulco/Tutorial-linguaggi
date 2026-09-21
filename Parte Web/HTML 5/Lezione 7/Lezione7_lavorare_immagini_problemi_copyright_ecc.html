@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 7: Inserire immagini in una pagina web</title>
+</head>
+<body>
+    <!-- Immagine semplice: aggiunti attributi 'alt' per garantire l'accessibilità (SEO e screen reader) -->
+    <img src="immagini/Gemini_Generated_Image_81afby81afby81af.jpg" alt="Descrizione dell'immagine 1">
+
+    <!-- Immagine semplice da percorso relativo -->
+    <img src="immagini/Gemini_Generated_Image_d6l6pfd6l6pfd6l6.jpg" alt="Descrizione dell'immagine 2">
+
+    <!-- Immagine completa di attributi: 
+         - 'alt': testo alternativo (corretta la 'e' in 'è' accentata)
+         - 'width' e 'height': definiscono le dimensioni in pixel
+         - 'title': testo che appare al passaggio del mouse (tooltip) -->
+    <img src="immagini/Gemini_Generated_Image_29sdjt29sdjt29sd.jpg" 
+         alt="Questa è un'immagine" 
+         width="200" 
+         height="180" 
+         title="Immagine 3">
+
+    <!-- Tag 'figure': contenitore semantico per elementi multimediali (immagini, diagrammi) accompagnati da una didascalia -->
+    <figure>
+        <!-- Immagine all'interno del blocco figure -->
+        <img src="immagini/Gemini_Generated_Image_pjf7bzpjf7bzpjf7.jpg" alt="Amici al bar">
+        <!-- 'figcaption': fornisce la didascalia visibile legata all'immagine (corretto "Un immagine" in "Un'immagine") -->
+        <figcaption>Un'immagine tra amici al bar</figcaption>
+    </figure>
+
+    <!-- Esempio di scheda o blocco promozionale composto da un'icona/immagine e un testo descrittivo -->
+    <div>
+        <!-- Inserire il percorso dell'immagine in 'src' e una breve descrizione in 'alt' -->
+        <img src="immagini/icona-servizio.png" alt="Icona dei servizi">
+        <!-- Corretto il refuso "del nostro" con "dal nostro" -->
+        <p>Cosa potete aspettarvi dal nostro servizio</p>
+    </div>
+</body>
+</html>
