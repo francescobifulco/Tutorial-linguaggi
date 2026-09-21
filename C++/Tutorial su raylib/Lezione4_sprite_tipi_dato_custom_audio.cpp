@@ -15,24 +15,26 @@ int main() {
     InitAudioDevice(); // Obbligatorio prima di caricare audio!
     SetTargetFPS(60);
 
-    // Caricamento risorse da disco
-    Texture2D playerTex = LoadTexture("resources/player.png");
-    Sound fxJump = LoadSound("resources/jump.wav");
+    // Caricamento risorse ed entita'
+    Entity player;
+    player.position = (Vector2){ 100.0f, 100.0f };
+    player.texture = LoadTexture("possabasse.jpg");
+    player.soundEffect = LoadSound("Climbing_To_The_High_Score.mp3");
 
     while (!WindowShouldClose()) {
         if (IsKeyPressed(KEY_SPACE)) {
-            PlaySound(fxJump); // Riproduce l'effetto sonoro
+            PlaySound(player.soundEffect); // Riproduce l'effetto sonoro
         }
 
         BeginDrawing();
             ClearBackground(RAYWHITE);
-            DrawTexture(playerTex, 100, 100, WHITE);
+            player.Draw(); // Disegna il personaggio a schermo
         EndDrawing();
     }
 
     // Unload sempre obbligatorio per evitare memory leak
-    UnloadTexture(playerTex);
-    UnloadSound(fxJump);
+    UnloadTexture(player.texture);
+    UnloadSound(player.soundEffect);
     CloseAudioDevice();
     CloseWindow();
     return 0;
