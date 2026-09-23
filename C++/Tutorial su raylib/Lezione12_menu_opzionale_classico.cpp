@@ -8,77 +8,51 @@
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
 
-struct Entity
-{
-    Vector2 position;
-    Texture2D texture;
-    Sound soundEffect;
-
-    void Draw()
-    {
-        DrawTextureV(texture, position, WHITE);
-    }
-};
-
-typedef enum GameState
-{
-    MENU,
-    GAMEPLAY,
+// Definizione degli stati di gioco
+typedef enum GameState {
+    STATE_MENU,
     STATE_OPTIONS,
-    GAMEOVER
+    STATE_GAMEPLAY
 } GameState;
 
-int main()
-{
-    InitWindow(1000, 800, "Progetto Gioco in C++");
+int main() {
+    InitWindow(800, 450, "Lezione 12 - Menu Opzioni Classico - Raylib");
     InitAudioDevice();
     SetTargetFPS(60);
 
-    Entity player;
-    player.position = (Vector2){100.0f, 100.0f};
-    //player.texture = LoadTexture("");
-    Music backgroundMusic = LoadMusicStream("Climbing_To_The_High_Score.mp3");
+    GameState currentState = STATE_MENU;
 
-    GameState currentState = MENU;
-
-    float volumeMusica = 0.5f;       // Volume da 0.0 a 1.0
+    // --- VARIABILI DELLE IMPOSTAZIONI ---
+    float musicVolume = 0.5f;       // Volume da 0.0 a 1.0
     bool isFullscreen = false;      // Stato schermo intero
     int selectedResolution = 0;     // Indice risoluzione selezionata
     bool dropdownEditMode = false;  // Stato del menu a tendina
 
-    PlayMusicStream(backgroundMusic);
-
-    while (!WindowShouldClose()){
-
-        UpdateMusicStream(backgroundMusic);
-
+    while (!WindowShouldClose()) {
+        
+        // --- LOGICA E AGGIORNAMENTO ---
         if (currentState == STATE_OPTIONS) {
-            SetMasterVolume(volumeMusica);
+            // Applica il volume in tempo reale
+            SetMasterVolume(musicVolume);
 
+            // Gestione Schermo Intero
             if (IsWindowState(FLAG_FULLSCREEN_MODE) != isFullscreen) {
                 ToggleFullscreen();
             }
         }
 
-        switch (currentState){
-        case GAMEOVER:
-            if (IsKeyPressed(KEY_ENTER))
-                currentState = MENU;
-            break;
-        }
-
+        // --- RENDERING ---
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-        player.Draw();
+            ClearBackground(RAYWHITE);
 
-        switch (currentState) {
+            switch (currentState) {
 
                 // 1. SCHERMATA MENU PRINCIPALE
-                case MENU:
+                case STATE_MENU:
                     DrawText("NOME DEL GIOCO", 280, 80, 30, DARKBLUE);
 
                     if (GuiButton((Rectangle){ 300, 160, 200, 40 }, "GIOCA")) {
-                        currentState = GAMEPLAY;
+                        currentState = STATE_GAMEPLAY;
                     }
                     if (GuiButton((Rectangle){ 300, 220, 200, 40 }, "OPZIONI")) {
                         currentState = STATE_OPTIONS;
@@ -96,7 +70,7 @@ int main()
 
                     // --- Regolazione Volume Audio ---
                     DrawText("Volume Musica:", 200, 130, 20, BLACK);
-                    GuiSlider((Rectangle){ 360, 130, 200, 20 }, "0%", "100%", &volumeMusica, 0.0f, 1.0f);
+                    GuiSlider((Rectangle){ 360, 130, 200, 20 }, "0%", "100%", &musicVolume, 0.0f, 1.0f);
 
                     // --- Controllo Schermo Intero ---
                     DrawText("Schermo Intero:", 200, 180, 20, BLACK);
@@ -111,30 +85,26 @@ int main()
                     // --- Pulsante Indietro ---
                     if (!dropdownEditMode) {
                         if (GuiButton((Rectangle){ 300, 340, 200, 40 }, "< INDIETRO")) {
-                            currentState = MENU;
+                            currentState = STATE_MENU;
                         }
                     }
                     break;
 
                 // 3. SCHERMATA DI GIOCO
-                case GAMEPLAY:
+                case STATE_GAMEPLAY:
                     DrawText("IN GIOCO!", 350, 200, 30, GREEN);
                     DrawText("Premi ESC per tornare al menu", 250, 250, 20, GRAY);
                     
                     if (IsKeyPressed(KEY_ESCAPE)) {
-                        currentState = MENU;
+                        currentState = STATE_MENU;
                     }
                     break;
-                
-                case GAMEOVER:
-                DrawText("GAME OVER - Premi Premi INVIO per andare nel menu principale", 200, 200, 20, RED);
-                break;
             }
+
         EndDrawing();
     }
 
     CloseAudioDevice();
     CloseWindow();
-    UnloadMusicStream(backgroundMusic);
     return 0;
 }
