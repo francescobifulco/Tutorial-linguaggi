@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <raylib.h>
 #include <vector>
+#include <fstream>
 #include <cstdlib>
 #include <ctime>
 
@@ -27,6 +28,13 @@ struct Entita {
     }
 };
 
+// Struttura Moneta (Collezionabile per extra punti)
+struct Coin {
+    Vector2 position;
+    float radius;
+    bool active;
+};
+
 struct Giocatore {
     Rectangle rettangolo;
     float velocita;     
@@ -40,6 +48,27 @@ struct Giocatore {
         aTerra = false;
     }
 };
+
+// -----------------------------------------------------------------------------
+// FUNZIONI DI GESTIONE SALVATAGGIO HIGH SCORE
+// -----------------------------------------------------------------------------
+int LoadHighScore(const std::string& filename) {
+    std::ifstream file(filename);
+    int highScore = 0;
+    if (file.is_open()) {
+        file >> highScore;
+        file.close();
+    }
+    return highScore;
+}
+
+void SaveHighScore(const std::string& filename, int score) {
+    std::ofstream file(filename);
+    if (file.is_open()) {
+        file << score;
+        file.close();
+    }
+}
 
 typedef enum StatoGioco {
     MENU,
@@ -83,6 +112,11 @@ int main() {
 
     StatoGioco statoAttuale = MENU;
 
+    const std::string saveFileName = "highscore.txt";
+
+    // CARICAMENTO HIGH SCORE
+    int highScore = LoadHighScore(saveFileName);
+
     float volumeMusica = 0.5f;        
     bool schermoIntero = false;       
     int risoluzioneSelezionata = 0;    
@@ -98,15 +132,32 @@ int main() {
     telecamera.rotation = 0.0f;
     telecamera.zoom = 1.0f;
 
+     // Vettori di Gioco
+    std::vector<Rectangle> platforms;
+    std::vector<Coin> coins;
+
+    platforms.push_back((Rectangle){ 50, 300, 200, 20 });
+    float lastPlatformX = 50.0f;
+
+    // Variabili Punteggio
+    int distanceScore = 0;
+    int coinBonusScore = 0;
+    int totalScore = 0;
+    int comboMultiplier = 1;
+    float comboTimer = 0.0f;
+
     const float gravita = 0.6f;        
     const float forzaSalto = -12.0f;   
 
-    Rectangle ostacolo = {600, 350, 40, 50}; // Ostacolo rosso
+    Rectangle ostacolo = {600, 250, 40, 50}; // Ostacolo rosso
 
     std::vector<Rectangle> platforms;
     float lastPlatformX = 50.0f;
     float rightEdge = 0.0f;
     float leftEdge = 0.0f;
+
+    bool gameOver = false;
+    bool newRecordAchieved = false;
 
     while (!WindowShouldClose()) {
 
@@ -119,6 +170,66 @@ int main() {
             if (IsWindowState(FLAG_FULLSCREEN_MODE) != schermoIntero) {
                 ToggleFullscreen();
             }
+        }
+
+        // 50% di probabilità di generare una moneta sopra la piattaforma
+        if (rand() % 2 == 0) {
+            Coin c;
+            c.position = (Vector2){ newPlat.x + newPlat.width / 2.0f, newPlat.y - 25.0f };
+            c.radius = 10.0f;
+            c.active = true;
+            coins.push_back(c);
+        }
+
+        // -----------------------------------------------------------------
+        // 4. COLLISIONI E RACCOLTA MONETE
+        // -----------------------------------------------------------------
+        player.canJump = false;
+        Rectangle playerBox = { player.position.x - player.size/2, player.position.y - player.size, player.size, player.size };
+
+        // Collisione Piattaforme
+        for (const auto& platform : platforms) {
+            if (CheckCollisionRecs(playerBox, platform)) {
+                if (player.speed.y > 0 && (player.position.y - player.speed.y * deltaTime) <= platform.y) {
+                    player.speed.y = 0;
+                    player.position.y = platform.y;
+                    player.canJump = true;
+                }
+            }
+        }
+
+        // Collisione Monete
+        for (auto& coin : coins) {
+            if (coin.active && CheckCollisionCircleRec(coin.position, coin.radius, playerBox)) {
+                coin.active = false;
+                    
+                // Incrementa Punteggio con Moltiplicatore
+                coinBonusScore += 100 * comboMultiplier;
+                    
+                // Aumenta Combo
+                comboMultiplier++;
+                comboTimer = 3.0f; // Il moltiplicatore dura 3 secondi
+            }
+        }
+
+        // Gestione Timer Combo
+        if (comboTimer > 0.0f) {
+            comboTimer -= deltaTime;
+            if (comboTimer <= 0.0f) {
+                comboMultiplier = 1; // Reset moltiplicatore
+            }
+        }
+
+        // -----------------------------------------------------------------
+        // 5. CALCOLO PUNTEGGIO TOTALE
+        // -----------------------------------------------------------------
+        distanceScore = (int)(player.position.x / 10.0f);
+        totalScore = distanceScore + coinBonusScore;
+
+        // Aggiornamento dinamico dell'High Score in diretta
+        if (totalScore > highScore) {
+            highScore = totalScore;
+            newRecordAchieved = true;
         }
 
         BeginDrawing();
@@ -262,9 +373,54 @@ int main() {
                         statoAttuale = MENU;
                     }
                     break;
+
+                     // -----------------------------------------------------------------
+                     // 6. GAME OVER & SALVATAGGIO
+                    // -----------------------------------------------------------------
+                    if (player.position.y > screenHeight + 200) {
+                        gameOver = true;
+                
+                        // Salviamo su file il nuovo punteggio record se superato
+                        if (newRecordAchieved) {
+                            SaveHighScore(saveFileName, highScore);
+                        }
+                    }
+
+            camera.target = player.position;
                 }
             }
 
+            // Monete
+                for (const auto& coin : coins) {
+                    if (coin.active) {
+                        DrawCircleV(coin.position, coin.radius, GOLD);
+                        DrawCircleLines((int)coin.position.x, (int)coin.position.y, coin.radius, ORANGE);
+                    }
+                }
+
+                // -----------------------------------------------------------------
+            // HEADS-UP DISPLAY (HUD)
+            // -----------------------------------------------------------------
+            DrawText(TextFormat("SCORE: %i", totalScore), 20, 20, 24, BLACK);
+            DrawText(TextFormat("HIGH SCORE: %i", highScore), 20, 50, 20, GOLD);
+
+            // Indicatore Combo Moltiplicatore
+            if (comboMultiplier > 1) {
+                DrawText(TextFormat("COMBO x%i! (%.1fs)", comboMultiplier, comboTimer), 20, 80, 22, RED);
+            }
+
+            if (gameOver) {
+                DrawRectangle(0, 0, screenWidth, screenHeight, Fade(BLACK, 0.85f));
+                
+                DrawText("GAME OVER", screenWidth/2 - MeasureText("GAME OVER", 40)/2, 120, 40, RED);
+                DrawText(TextFormat("Punteggio Finale: %i", totalScore), screenWidth/2 - MeasureText(TextFormat("Punteggio Finale: %i", totalScore), 24)/2, 190, 24, WHITE);
+                
+                if (newRecordAchieved) {
+                    DrawText("NUOVO RECORD!", screenWidth/2 - MeasureText("NUOVO RECORD!", 28)/2, 230, 28, GOLD);
+                } else {
+                    DrawText(TextFormat("Record attuale: %i", highScore), screenWidth/2 - MeasureText(TextFormat("Record attuale: %i", highScore), 20)/2, 230, 20, GRAY);
+                }
+            }
         EndDrawing();
     }
 
